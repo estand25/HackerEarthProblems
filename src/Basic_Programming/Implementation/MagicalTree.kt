@@ -12,18 +12,35 @@ fun main(args: Array<String>){
     for(i in 0..L){
         var input = readLine()!!.toCharArray()
         var temp: Int?
-        var temp1 : String? = ""
-        var temp2 : String? = ""
+        var temp1 : MutableList<String> = mutableListOf<String>()
+        var temp2 : MutableList<String> = mutableListOf<String>()
 
         for (j in 0..(input.size-1)){
-            if (input[j].isDigit()){
-                //temp = input[j].toInt()
-                temp1 = temp1 + input[j]
-            }else{
-                temp2 = temp2 + input[j]
+            if(j%2 == 0) {
+                temp1.add(input[j].toString())
+
+                if((temp2.size-1)%2 == 0){
+                    println("m : " + if(temp1[j].isNullOrEmpty()) "null" else temp1[j])
+                    //println("b : " + if(temp2[j].isNullOrEmpty()) "null" else temp2[j])
+
+                    println("\n")
+                }
+            }
+            else {
+                temp2.add(input[j].toString())
             }
         }
-        println(temp1)
-        println(temp2)
+
+        println("\n")
+
+        for(k in 0..(temp1.size-1)){
+            print(temp1[k]+" ")
+        }
+
+        println("\n")
+
+        for(i in 0..(temp2.size-1)){
+            print(" " + temp2[i])
+        }
     }
 }
