@@ -9,6 +9,7 @@ fun main(args: Array<String>){
     var t = readLine()!!.toInt()
     var c = readLine()!!.toInt()
     var numberCount: Int = 0
+    var xy : MutableList<Boolean> = mutableListOf<Boolean>()
 
     for(aa in 1..t) {
         var s = readLine()!!.toCharArray()
@@ -22,8 +23,14 @@ fun main(args: Array<String>){
                 numberCount++
 //            else
 //                isNumber = false
-            if (!s[a].isLetter())
-                println(s[a]+" "+isNumber+" "+numberCount)
+            //if (!s[a].isLetter()) {
+            println(s[a] + " " + isNumber + " " + numberCount)
+
+            xy.add(isNumber)
+
+            //if(xy.contains(false))
+
+            //}
         }
         println(numberCount)
     }
