@@ -7,16 +7,13 @@ Standley Eugene
 */
 fun main(args: Array<String>){
     var t = readLine()!!.toInt()
-    var c = readLine()!!.toInt()
     var numberCount: Int = 0
-    var xy : MutableList<Boolean> = mutableListOf<Boolean>()
-    var num : MutableList<Int> = mutableListOf<Int>()
-    var num2 : MutableList<Int> = mutableListOf<Int>()
 
     for(aa in 1..t) {
+        var num : MutableList<Int> = mutableListOf<Int>()
+        var c = readLine()!!.toInt()
         var s = readLine()!!.toCharArray()
-        var t = s
-        var prevIsNumber = false
+        var t: String? = null
 
         for (a in 0..(c-1)) {
             var isNumber = false
@@ -24,24 +21,38 @@ fun main(args: Array<String>){
             if (!s[a].isLetter())
                 isNumber = true
 
-            if(s[a].isLetter() && isNumber)
-                numberCount++
-
             if(isNumber)
-                numberCount =  1
+                numberCount = 1
             else
                 numberCount = 0
 
-            if(a >= 1) {
-                println(s[a] + " " + isNumber + " " + numberCount)
 
-                xy.add(isNumber)
+            if(t.isNullOrEmpty()) {
+                t = numberCount.toString()
                 num.add(numberCount)
             }
+            else
+                if(t?.last().toString() == "1" && numberCount == 1){
+
+                } else {
+                    if(t?.last().toString() == "0" && numberCount == 0) {
+
+                    }else {
+                        t = t + "," + numberCount.toString()
+                        num.add(numberCount)
+                    }
+                }
+
         }
-        for(bb in 1..(num.size-1)){
-            if(num[bb] > 0)
-                 num2.add(num[bb])
+        var count = 0
+
+        for(bb in 0..(num.size-1)){
+            if(num[bb] == 1)
+                count++
         }
+
+        println(count)
+        t = null
+
     }
 }
