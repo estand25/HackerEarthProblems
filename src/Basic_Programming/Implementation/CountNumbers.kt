@@ -26,23 +26,19 @@ fun main(args: Array<String>){
             else
                 numberCount = 0
 
-
             if(t.isNullOrEmpty()) {
                 t = numberCount.toString()
                 num.add(numberCount)
             }
             else
                 if(t?.last().toString() == "1" && numberCount == 1){
-
                 } else {
                     if(t?.last().toString() == "0" && numberCount == 0) {
-
                     }else {
                         t = t + "," + numberCount.toString()
                         num.add(numberCount)
                     }
                 }
-
         }
         var count = 0
 
