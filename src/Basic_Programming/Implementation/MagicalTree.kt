@@ -8,6 +8,7 @@ Standley Eugene
 fun main(args: Array<String>){
     var L = readLine()!!.toInt()
     var maxExpres: Int?
+    var temp3 : MutableList<Int> = mutableListOf<Int>()
 
     for(i in 0..(L-1)){
         var input = readLine()!!.toCharArray()
@@ -23,44 +24,22 @@ fun main(args: Array<String>){
                     temp2.add(input[j].toString())
         }
 
-//        for(k in 0..(temp1.size-1))
-//            print(temp1[k].toString())
-//
-//        println("")
-//        println(temp1.size)
-//        println("")
-//
-//        for(m in 0..(temp2.size-1))
-//            print(temp2[m].toString())
-//
-//        println("")
-//        println(temp2.size)
-//        println("")
-
         for(n in 1..(temp1.size-1)){
             if(n == 1)
-                if(temp2[0].toString() == "+") {
+                if(temp2[0].toString() == "+")
                     temp = temp1[0] + temp1[1]
-
-//                    println(temp.toString() + " = " + temp1[0].toString().toInt() + " + " + temp1[1].toString().toInt())
-                }
-                else {
+                else
                     temp = temp1[0] - temp1[1]
-//                    println(temp.toString() + " = " + temp1[0].toString().toInt() + " - " + temp1[1].toString().toInt())
-                }
             else
-                if(temp2[n-1].toString() == "+") {
+                if(temp2[n-1].toString() == "+")
                     temp += temp1[n]
-//                    println(temp.toString() + " += " + temp1[n].toString().toInt())
-                }
-                else {
+                else
                     temp -= temp1[n]
-//                    println(temp.toString() + " -= " + temp1[n].toString().toInt())
-                }
         }
 
-        println("")
-        println(temp)
-        println("")
+        //println(temp)
+        temp3.add(temp)
     }
+
+    println(temp3.max())
 }
