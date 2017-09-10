@@ -1,5 +1,7 @@
 package Basic_Programming.Input_Output
 
+import java.lang.Math.ceil
+
 /*
 Basic_Programming.Input_Output
 Standley Eugene
@@ -19,6 +21,6 @@ fun main(args: Array<String>){
         var L = qline[0].toInt()
         var R = qline[1].toInt()
 
-        println("${(L+R)/2}")
+        println(ceil(((L+R)/2).toDouble()).toInt())
     }
 }
