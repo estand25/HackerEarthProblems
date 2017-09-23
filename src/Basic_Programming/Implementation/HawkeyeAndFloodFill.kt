@@ -4,6 +4,7 @@ package Basic_Programming.Implementation
 Basic_Programming.Implementation
 Standley Eugene
 9/22/2017
+Work In Progress
 */
 fun main(args: Array<String>){
     var pb = readLine()!!.toInt()
@@ -17,13 +18,13 @@ fun main(args: Array<String>){
 
     var line:String = ""
 
-    var count:Int = p.toString().toInt()
+    var count:Int = p.toString().toInt()-1
 
-    println(pb)
-    println(i + ", " + j)
-    println(p)
-    println(p.toString().toInt())
-    println(pb.toString().toInt())
+//    println(pb)
+//    println(i + ", " + j)
+//    println(p)
+//    println()
+//    println(pb.toString().toInt())
 
     for(a in 0..(pb.toString().toInt()-1)){
         line = ""
@@ -44,8 +45,7 @@ fun main(args: Array<String>){
                             line += " " + lines.size.toString()
                         }
                         else {
-                            var i = (lines.size - p.toString().toInt())+1
-                            line += " " + i //(lines.size - p.toString().toInt()).toString()
+                            line += lines[count].substring(1,lines[count].length)
                         }
                     }
                 }
@@ -54,6 +54,11 @@ fun main(args: Array<String>){
             if(line.replace(" ","").length >= pb.toString().toInt())
                 limit = true
         }
+
+        if (lines.size > p.toString().toInt()){
+            count -= 1
+        }
+
         lines.add(line)
         println(line)
     }
