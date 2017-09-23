@@ -1,17 +1,23 @@
 package Basic_Programming.Implementation
 
+import java.math.BigInteger
 /*
 Basic_Programming.Implementation
 Standley Eugene
 9/9/2017
+Work in Progress
 */
 fun main(args: Array<String>){
-    var t = readLine()!!.toInt()
+    var t = readLine()!!.toString()
 
-    for(a in 0..(t-1)){
-        var b = readLine()!!.toCharArray()
+    var bigT = BigInteger(t)
 
-        if((b.size % 2) == 0)
+    for(a in 0..(bigT-BigInteger.ONE).toInt()){
+        var b = readLine()!!.toString()
+
+        var input = BigInteger.valueOf(b.toLong())
+
+        if(input.divide(BigInteger("2")).equals(0))
             println("YES")
         else
             println("NO")
