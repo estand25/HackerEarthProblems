@@ -18,7 +18,7 @@ fun main(args: Array<String>){
         xy.add(aa.toString())
     }
 
-    if(b.containsAll(xy))
+    if(xy.containsAll(b))
         println("YES")
     else
         println("NO")
