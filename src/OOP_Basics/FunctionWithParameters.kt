@@ -12,6 +12,7 @@ fun main(args: Array<String>){
     subtract(3,1,1)
 }
 
+//Void functions - Returns nothing
 fun add(num1: Int,num2: Int){
     var sum = num1 + num2
     println("Sum is $sum")
