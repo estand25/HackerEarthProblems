@@ -19,8 +19,6 @@ fun main(args: Array<String>){
 
 //        var N = reader.nextInt()
 //        var Ai = reader.next()!!.replace(" ", ",").map { it.toString() }
-        //10000000
-        //1000110
 
         var lowest = Ai.min()//!!.single()
         //var lenght: List<Int> = Ai.map { x -> x.count() } //.distinct()
