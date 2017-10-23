@@ -22,8 +22,11 @@ fun main(args: Array<String>){
         }
     }
 
+    var change = 0
+
     for(c in 0..nCardList.size-1) {
-        println(nCardList[c])
+        if(nCardList.get(c) != nCards.get(c))
+            change = nCardList.get(c).toInt()
     }
 
     for(c in 0..mCardList.size-1) {
