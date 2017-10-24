@@ -22,14 +22,37 @@ fun main(args: Array<String>){
         }
     }
 
-    var change = 0
+    var nChanges : MutableList<String>  = mutableListOf<String>()
 
-    for(c in 0..nCardList.size-1) {
+    for(c in 0..(nCardList.size-1)) {
         if(nCardList.get(c) != nCards.get(c))
-            change = nCardList.get(c).toInt()
+            nChanges.add("C")
+        else
+            nChanges.add(nCardList[c])
     }
 
-    for(c in 0..mCardList.size-1) {
-        println(mCardList[c])
+    var nChangeItem : MutableList<String>  = mutableListOf<String>()
+    var nChange2 : MutableList<String>  = nChanges.toMutableList()
+
+    for(c in 0..(nChanges.map {a -> a.equals("C") }.size-1)) {
+       if(nChanges.map {a -> a.equals("C") }[c])
+           nChangeItem.add(nCardList[c])
     }
+
+    nChangeItem.max()
+
+    for(c in 0..(nChanges.map {a -> a.equals("C") }.size-1)) {
+        if(nChanges.map {a -> a.equals("C") }[c])
+            nChanges[c] = nChangeItem.max().toString()
+    }
+
+    var dollar: Int = 0
+
+    for(c in 0..(nChange2.size-1)){
+        if (nChange2.map {a -> a.equals("C") }[c]) {
+            dollar=dollar+nChanges[c].toInt()-nCards[c].toInt()
+        }
+    }
+
+    println(dollar)
 }
