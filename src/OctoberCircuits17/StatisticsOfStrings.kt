@@ -7,11 +7,11 @@ OctoberCircuits17
 Standley Eugene
 10/27/2017
 */
-
 fun main(args: Array<String>){
-    var n = readLine()!!.toInt()
+    var n = BigInteger.valueOf(readLine()!!.toLong())
 
-    for(a in 0..(n-1)) {
+    //BigInteger.valueOf(n)
+//    for(a in 0..(n-1)) {
         var a = readLine()!!.replace(" ", ",").split(",").map { it.trim() }
 
         var superBig = 1
@@ -19,20 +19,22 @@ fun main(args: Array<String>){
 
         var result: String? = null
 
-        if ((BigInteger.valueOf(superBig.toLong()) - BigInteger.valueOf(a[0].toLong())).toInt() > 0)
+        if (superBig - (a[0].toLong()).toInt() > 0)
             result = "1"
-        else if ((BigInteger.valueOf(superBig.toLong()) - BigInteger.valueOf(a[0].toLong())).toInt() == 0)
+        else if (superBig - (a[0].toLong()).toInt() == 0)
             result = "0"
         else
             result = "-1"
 
-        if ((BigInteger.valueOf(nSuperBig.toLong()) - BigInteger.valueOf(a[1].toLong())).toInt() > 0)
-            result += " 1"
-        else if ((BigInteger.valueOf(nSuperBig.toLong()) - BigInteger.valueOf(a[1].toLong())).toInt() == 0)
-            result += " 0"
+        result += " "
+
+        if (nSuperBig - (a[0].toLong()).toInt() > 0)
+            result += "1"
+        else if (nSuperBig - (a[0].toLong()).toInt() == 0)
+            result += "0"
         else
-            result += " -1"
+            result += "-1"
 
         println(result)
-    }
+//    }
 }
