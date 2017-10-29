@@ -7,6 +7,4 @@ Standley Eugene
 */
 fun main (args: Array<String>){
     var fLine = readLine()!!.replace(" ", ",").split(",").map { it.trim().toLong() }
-
-
 }
