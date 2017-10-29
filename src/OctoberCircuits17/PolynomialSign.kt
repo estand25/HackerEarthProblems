@@ -12,26 +12,26 @@ fun main(args: Array<String>){
 
     var a = readLine()!!.replace(" ", ",").split(",").map { it.trim() }
 
-    var superBig = 1
-    var nSuperBig = -1
+//    var superBig = 1+n.toLong()
+//    var nSuperBig = -1+n.toLong()
 
     var result: String? = null
 
-    if (superBig - (a[0].toLong()).toInt() > 0)
-        result = "1"
-    else if (superBig - (a[0].toLong()).toInt() == 0)
-        result = "0"
-    else
-        result = "-1"
+    if ((a[0].toLong()+n.toLong()).toInt() > 0)
+        result = "1"//superBig.toInt() -
+    else if ((a[0].toLong()+n.toLong()).toInt() == 0)
+        result = "0"//superBig.toInt() -
+    else if ((a[0].toLong()+n.toLong()).toInt() < 0)
+        result = "-1"//superBig.toInt() -
 
     result += " "
 
-    if (nSuperBig - (-a[0].toLong()).toInt() > 0)
-        result += "1"
-    else if (nSuperBig - (-a[0].toLong()).toInt() == 0)
-        result += "0"
-    else
-        result += "-1"
+    if ((-a[0].toLong()+n.toLong()).toInt() > 0)
+        result += "1"//nSuperBig.toInt() -
+    else if ((-a[0].toLong()+n.toLong()).toInt() == 0)
+        result += "0"//nSuperBig.toInt() -
+    else if ((-a[0].toLong()+n.toLong()).toInt() < 0)
+        result += "-1"//nSuperBig.toInt() -
 
-    println(result)
+                println(result)
 }
