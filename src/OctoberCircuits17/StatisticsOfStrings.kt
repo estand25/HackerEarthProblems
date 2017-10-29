@@ -12,21 +12,19 @@ fun main(args: Array<String>){
     var a = input[1]
     var mod = input[2]
 
-    var Char : List<String> = listOf("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","q","r","s","t","u","v","w")
+    var count: MutableList<Int>  = mutableListOf<Int>()
+    var result: Int? = null
 
-    var nChar : List<String> = Char.subList(0,n.toInt())
-
-    var f: MutableList<String> = mutableListOf<String>()
-
-    f.add(0,"")
-
-    var initialResults = ""
-    for(a1 in 0..(n-1)){
-        initialResults+= nChar[0]
+    for(a1 in 0..(a-1)){
+        count.add(n.toInt())
     }
 
-    f.set(0,initialResults)
+    for(a2 in 0..(count.size-1)){
+        if (result == null)
+            result = count[a2]
+        else
+            result *= count[a2]
+    }
 
-    println(initialResults)
-
+    println(result!!.minus(1))
 }
