@@ -12,11 +12,20 @@ fun main(args: Array<String>){
     var a = readLine()!!.replace(" ", ",").split(",").map{ it.toInt()}
     var b = readLine()!!.replace(" ", ",").split(",").map{ it.toInt()}
 
-    for (i in 0..(N-1)){
-        var loop = true
+    //var result : Array<String,String> = null
 
-        while (loop){
-            var pairs:
+    println("-- Input -- (1,1) -- ")
+    for (i in 0..(N-1)){
+        println("Pairs= ${a[i]}, ${b[i]}")
+    }
+
+    println("-- Input -- ([1,1],[1,1]) -- ")
+    for (i in 0..(N-1)){
+        for (j in 0..(N-1)){
+            var q = a[i]-b[j]
+            if(q <= K){
+                println("Pairs= ${a[i]}, ${b[j]}")
+            }
         }
     }
 }
